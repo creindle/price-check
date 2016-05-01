@@ -5,9 +5,14 @@
  * @param  {number} lng The location's longitude value
  * @return {[Products]]} The Uber products available at the queried location
  */
+
+//The first variable, when positive, north of equator - negative, south of equator
+// The second variable, when negative, behind UTC, positive after UTC
+getProductsByLocation(21.3069, -157.8583);
+
 function getProductsByLocation (lat, lng) {
-  var location = {
-    /* location object */
+  var location = {//we have it ready to go but we didn't use it.
+    /* location object */ //You don't have function front function execution has ()
   };
   var products = getProducts(location);
   return products;
@@ -22,7 +27,7 @@ function getProducts (location) {
   return $.ajax({
     type: "GET",
     data: location,
-    url: /* Backend URL */,
+    url: './products',//This URL is expecting a string This is the frontend
     async: false
   });
 }
